@@ -27,7 +27,7 @@ export class AppController {
   }
 
   @Post('user')
-  async signupUser(
+  async insertUser(
     @Body() userData: { name: string; email: string; password: string },
   ): Promise<UserModel> {
     return this.userService.createUser(userData);
