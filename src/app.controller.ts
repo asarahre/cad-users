@@ -15,12 +15,12 @@ export class AppController {
   constructor(private readonly userService: UserService) {}
 
   @Get('user/:id')
-  async getPostById(@Param('id') id: string): Promise<UserModel> {
+  async getUserById(@Param('id') id: string): Promise<UserModel> {
     return this.userService.user({ id: Number(id) });
   }
 
   @Get('users')
-  async getPublishedPosts(): Promise<UserModel[]> {
+  async getUser(): Promise<UserModel[]> {
     return this.userService.users({
       where: {},
     });
